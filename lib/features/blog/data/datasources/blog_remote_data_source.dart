@@ -22,14 +22,15 @@ class BlogRemoteDataSourceImpl implements BlogRemoteDataSource {
     try {
       print('DEBUG: Attempting to upload blog: ${blog.toJson()}');
       print('DEBUG: Current user ID: ${supabaseClient.auth.currentUser?.id}');
-      
+
       final blogData =
           await supabaseClient.from('blogs').insert(blog.toJson()).select();
 
       print('DEBUG: Blog uploaded successfully: $blogData');
       return BlogModel.fromJson(blogData.first);
     } on PostgrestException catch (e) {
-      print('DEBUG: PostgrestException - Code: ${e.code}, Message: ${e.message}, Details: ${e.details}');
+      print(
+          'DEBUG: PostgrestException - Code: ${e.code}, Message: ${e.message}, Details: ${e.details}');
       throw ServerException('Database Error: ${e.message} (Code: ${e.code})');
     } catch (e) {
       print('DEBUG: General Exception: $e');
