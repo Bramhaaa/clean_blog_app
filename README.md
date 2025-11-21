@@ -2,8 +2,7 @@
 
 A modern, full-stack blog application built with Flutter and Clean Architecture principles. Features user authentication, blog creation with image uploads, and real-time data synchronization using Supabase backend.
 
-[![Flutter Version](https://img.shields.io/badge/Flutter-3.29.2-blue.svg)](https://flutter.dev/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 [![Live Demo](https://img.shields.io/badge/Demo-Live-brightgreen)](https://flutter-blog-app-clean.web.app)
 
 ## 🌐 Live Demo
